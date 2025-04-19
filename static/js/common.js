@@ -74,3 +74,11 @@ slider.addEventListener('mouseenter', () => {
 slider.addEventListener('mouseleave', () => {
 	slideInterval = setInterval(nextSlide, 5000);
 }); */
+
+var is64bit = navigator.userAgent.indexOf('WOW64') !== -1 || navigator.userAgent.indexOf('Win64') !== -1;
+if (!is64bit) {
+    var downloadBtn = document.querySelector('._download-btn');
+    if (downloadBtn) {
+        downloadBtn.href = downloadBtn.getAttribute('data-32bit');
+    }
+}
